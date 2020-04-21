@@ -218,7 +218,7 @@ $active_item = TmplPadraoGoverno01Helper::getActiveItemid();
         <footer>
             <div class="footer-atalhos">
                 <div class="container">
-                    <div class="pull-right voltar-ao-topo"><a href="#portal-siteactions"><i class="icon-chevron-up"></i>&nbsp;Voltar para o topo</a></div>
+                    <div class="pull-right voltar-ao-topo"><a href="#"><i class="icon-chevron-up"></i>&nbsp;Voltar para o topo</a></div>
                 </div>
             </div>
             <div class="container container-menus">
@@ -249,7 +249,7 @@ $active_item = TmplPadraoGoverno01Helper::getActiveItemid();
             <div class="footer-atalhos visible-phone">
                 <div class="container">
                     <span class="hide">Fim do conteúdo da página</span>
-                    <div class="pull-right voltar-ao-topo"><a href="#portal-siteactions"><i class="icon-chevron-up"></i>&nbsp;Voltar para o topo</a></div>
+                    <div class="pull-right voltar-ao-topo"><a href="#"><i class="icon-chevron-up"></i>&nbsp;Voltar para o topo</a></div>
                 </div>
             </div>
         </footer>
