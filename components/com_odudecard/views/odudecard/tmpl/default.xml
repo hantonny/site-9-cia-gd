@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+         <layout title="Ecard Home">
+                <message>Homepage of Ecard</message>
+        </layout>
+        
+        <fields name="params">
+		<!-- Basic options. -->
+		<fieldset name="request" label="COM_MENUS_BASIC_FIELDSET_LABEL">
+
+			<field name="list" type="radio"
+				default="auto"
+				description="Display ecard of your choice"
+				label="Show Ecard"
+			>
+				<option value="all">all</option>
+				<option value="pro">Premium</option>
+			</field>
+			
+		</fieldset>
+		
+		</fields>
+</metadata>

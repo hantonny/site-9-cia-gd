@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+         <layout title="Link to ecard">
+                <message>Link to single Ecard.</message>
+        </layout>
+                <fields name="params">
+        <fieldset name="request">
+
+				<field name="pickcat" type="text" default="" label="Enter Ecard Alias" description="Check Ecard URL to copy alias" size="50" />
+			<field name="mymenuitem" type="menuitem" default="1" label="Select Primary Menu" description="Main Ecard Menu" />
+		
+			 <field name="@spacer" type="spacer" default="" label="" description="" />
+        </fieldset>
+    </fields>
+</metadata>

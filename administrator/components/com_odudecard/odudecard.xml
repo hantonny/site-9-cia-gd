@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>odudecard</name>
+	<creationDate>19 July 2017</creationDate>
+	<author>ODude Network</author>
+	<authorEmail>navneet@odude.com</authorEmail>
+	<authorUrl>http://odude.com</authorUrl>
+	<copyright>This extension is released under the GNU/GPL License.
+	</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html
+		GNU/GPL</license>
+	<version>3.7.1</version>
+	<description>ODude ECARD Free Version</description>
+	<files folder="site">
+	
+				<filename>index.html</filename>
+                <filename>odudecard.php</filename>
+                <filename>controller.php</filename>
+                <filename>router.php</filename>
+                <folder>views</folder>
+                <folder>models</folder>
+                <folder>language</folder>
+                <folder>include</folder>
+				<folder>template</folder>
+                <folder>controllers</folder>
+	
+	</files>
+	<media destination="ecard" folder="images">
+		<filename>birthday.jpg</filename>
+		<filename>birthday_banner.jpg</filename>
+		<filename>birthday_bg.gif</filename>
+		<filename>birthday_ss.jpg</filename>
+		<filename>photo.gif</filename>
+		<filename>video.png</filename>
+	
+	
+	</media>
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/install.mysql.utf8.sql</file>
+			<file driver="mysql">sql/install.mysql.utf8.sql</file>
+			<file driver="sqlsrv">sql/install.sqlsrv.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/uninstall.mysql.utf8.sql</file>
+			<file driver="mysql">sql/uninstall.mysql.utf8.sql</file>
+			<file driver="sqlsrv">sql/uninstall.sqlsrv.sql</file>
+		</sql>
+	</uninstall>
+	 <update> <!-- Runs on update; New in 2.5 -->
+                <schemas>
+                        <schemapath type="mysql">sql/updates/mysql</schemapath>
+                </schemas>
+        </update>
+		
+	<scriptfile>script.php</scriptfile>
+	<administration>
+		<menu link="option=com_odudecard">ODude Ecard</menu>
+		<submenu>
+		
+			<menu link="option=com_odudecard">Categories</menu>
+			<menu link="option=com_odudecard&amp;controller=odudecardcard">Ecard List</menu>
+			
+			<menu link="option=com_odudecard&amp;view=odudecardthumb">New Ecard Auto Thumbnail</menu>
+			<menu link="option=com_odudecard&amp;controller=odudecardcard&amp;task=add">New JPG/FLASH Ecard</menu>
+			<menu link="option=com_odudecard&amp;controller=import">Import from Folder</menu>
+			<menu link="option=com_odudecard&amp;controller=odudecardstat">Statistics</menu>
+	       <menu link="option=com_odudecard&amp;controller=odudecardsetting&amp;task=edit&amp;cid=1">Settings</menu>
+		</submenu>
+		<files folder="admin">
+						<filename>index.html</filename>
+                        <filename>config.xml</filename>
+                        <filename>odudecard.php</filename>
+                        <filename>controller.php</filename>
+						 <filename>easysocial.points</filename>
+                        <folder>sql</folder>
+                        <folder>tables</folder>
+						<folder>models</folder>
+                        <folder>views</folder>
+                        <folder>controllers</folder>
+                        <folder>helpers</folder>
+						<folder>language</folder>
+
+		</files>
+	</administration>
+		
+    <updateservers>
+       <server type="extension" priority="1" name="ODude Ecard Updates">http://www.odude.com/update/J3/ODudeEcard/update_odudecard_free.xml</server>
+    </updateservers>
+</extension>

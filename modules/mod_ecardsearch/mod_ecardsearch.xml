@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>JE ECard Search</name>
+	<author>Hardik Mistry</author>
+	<creationDate>Aug 2013</creationDate>
+	<copyright>Copyright (C) 2009 - 2010 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.joomlaextensions.co.in</license>
+	<authorEmail>emailtohardik@gmail.com</authorEmail>
+	<authorUrl>www.joomlaextensions.co.in</authorUrl>
+	<version>1.1</version>
+	<description>JE Ecard Search</description>
+	<files>
+		<filename module="mod_ecardsearch">mod_ecardsearch.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>elements</folder>
+		<folder>js</folder>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_ecardsearch/elements" >
+		<fieldset name="basic" >
+	
+		<field name="moduleclass_sfx" type="text" default="" label="MODULE CLASS SUFFIX" description="PARAMMODULECLASSSUFFIX" />
+		<field name="cat_id" type="JePcategory" default="" label="Enter Category" description="Enter Category" required="true"/>
+		
+		</fieldset>
+		</fields>
+	</config>
+</extension>

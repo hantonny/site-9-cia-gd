@@ -1,0 +1,1 @@
+ALTER TABLE `#__ecard_cate` ADD `state` TINYINT(1) NOT NULL , ADD `ordering` INT(3) NOT NULL ;

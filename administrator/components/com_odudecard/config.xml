@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+<fieldset
+                name="component"
+                label="ODude Ecard"
+                description="ODude Ecard Parameters/Settings"
+        >
+        
+  
+   		 <field name="start_ecard" type="radio" default="0" label="Ecard or Image Gallery" description="Option to switch between Picture Gallery and Ecard">
+			<option value="0">Ecard (Greetings)</option>
+			<option value="1">Photo Gallery</option>
+		</field>
+      <field name="show_create" type="radio" default="1" label="Allow picture post" description="Enable/Disable Create ecard/gallery of your own image via user at front end.">
+			<option value="0">Disable</option>
+			<option value="1">Enable</option>
+		</field>
+		
+		<field name="show_tube" type="radio" default="1" label="Allow YouTube.com Video post" description="Enable/Disable Create youtube ecard of your own via user at front end.">
+			<option value="0">Disable</option>
+			<option value="1">Enable</option>
+		</field>
+		  <field name="show_video" type="radio" default="1" label="Allow Video post" description="Enable/Disable Create VIDEO MP4 ecard of your own via user at front end.">
+			<option value="0">Disable</option>
+			<option value="1">Enable</option>
+		</field>
+		
+		  <field name="show_postedby" type="radio" default="1" label="Show/Hide Posted by user" description="Show/Hide Posted by username.">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</field>
+
+  </fieldset>
+</config>

@@ -1,0 +1,1 @@
+ALTER TABLE `#__ecard_setting` ADD `captcha_key` TEXT NOT NULL , ADD `captcha_secret` TEXT NOT NULL ;

@@ -1,0 +1,17 @@
+{ 
+"worldpopulation": 
+	[
+		 {
+		 "rank":"http://maxecard.com/?option=com_odudecard&view=json&format=ajax","country":"MaxEcard.com",
+		 
+		 "population":"1000+",
+		 "flag":"http://maxecard.com/templates/ca_cloudbase2_j25/images/logo/logo.png"
+		 }, 
+		
+		 {
+		 "rank":"http://bfcpage.com/?option=com_odudecard&view=json&format=ajax","country":"BFCPage.com",
+		 "population":"1",
+		 "flag":"http://bfcpage.com/images/product.jpg"
+		 } 
+	] 
+}

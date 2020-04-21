@@ -1,0 +1,1 @@
+ALTER TABLE `#__ecard_setting` ADD `version` INT(1) NOT NULL ;

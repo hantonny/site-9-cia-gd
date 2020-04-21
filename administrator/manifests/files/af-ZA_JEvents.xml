@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="1.6" type="file" client="site" method="upgrade">
+<name>Afrikaans Translation for JEvents</name>
+<tag>af-ZA</tag>
+<packagename>af-ZA JEvents</packagename>
+<version>3.20160927</version>
+<creationDate>2016.09.27</creationDate>
+<author>Richard</author>
+<authoremail/>
+<authorurl/>
+<copyright>
+</copyright>
+<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+<description>Afrikaans Translation for JEvents</description>
+<scriptfile>install.php</scriptfile>
+<fileset>
+<files folder="admin" target="administrator/language/af-ZA">
+	<filename>af-ZA.com_jevents.ini</filename>
+	<filename>af-ZA.com_jevents.menu.ini</filename>
+	<filename>af-ZA.com_jevents.sys.ini</filename>
+	<filename>af-ZA.mod_jevents_latest.ini</filename>
+	<filename>af-ZA.pkg_jevents.sys.ini</filename>
+	<filename>af-ZA.plg_content_jevents.ini</filename>
+	<filename>af-ZA.plg_content_jevents.sys.ini</filename>
+	<filename>af-ZA.plg_finder_jevents.ini</filename>
+	<filename>af-ZA.plg_finder_jevents.sys.ini</filename>
+	<filename>af-ZA.plg_search_eventsearch.ini</filename>
+</files>
+<files folder="site" target="language/af-ZA">
+	<filename>af-ZA.com_jevents.ini</filename>
+	<filename>af-ZA.mod_jevents_cal.ini</filename>
+	<filename>af-ZA.mod_jevents_custom.ini</filename>
+	<filename>af-ZA.mod_jevents_detail.ini</filename>
+	<filename>af-ZA.mod_jevents_latest.ini</filename>
+</files>
+</fileset>
+</extension>

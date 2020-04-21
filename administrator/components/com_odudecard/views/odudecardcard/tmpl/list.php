@@ -1,0 +1,255 @@
+<?php 
+ /**
+ * @package ODude ECard
+ * @author ODude.com
+ * @copyright (C) 2014 ODude Network. All rights reserved.
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ **/
+
+ 
+defined('_JEXEC') or die('Restricted access');
+JHTML::_('behavior.tooltip');
+JHTML::_('behavior.formvalidation');
+JHTML::_('behavior.framework');
+JHTML::_('behavior.modal');
+
+	global $mainframe;
+	$mainframe= JFactory::getApplication();
+	$option 	= JRequest::getVar('option');
+	
+    $db = JFactory::getDBO();
+	
+	
+	$filter_order= $mainframe->getUserStateFromRequest( $option.'filter_order','filter_order','id','cmd' );
+	$filter_order_Dir= $mainframe->getUserStateFromRequest( $option.'filter_order_Dir',	'filter_order_Dir','','word' );
+	$filter_order     = $mainframe->getUserStateFromRequest($option . '.filter_order', 'filter_order', 'ordering', 'cmd');
+	$filter_state = $mainframe-> getUserStateFromRequest( $option.'filter_state', 	'filter_state', '','word' );
+	$search_cat = $mainframe-> getUserStateFromRequest( $option.'search_cat', 'search_cat','','string' );
+	$search_cat = JString::strtolower( $search_cat );
+	
+// table ordering
+	$lists['order_Dir']	= $filter_order_Dir;
+	$lists['order']		= $filter_order;	
+// search filter	
+    $lists['search_cat']= $search_cat;
+	
+	function getCategory()
+    {
+       
+		   $db = JFactory::getDBO();
+			$query = "select * from #__ecard_cate order by ordering asc";
+			$db->setQuery($query);
+			$rows = $db -> loadObjectList();
+			return $rows;
+		
+    }
+	 function buttonUp($prev_order,$prev_id,$current_order,$current_id,$next_order,$next_id)
+				{
+					$where=JRequest::getVar('where','');
+					$cat=JRequest::getVar('cat','');
+					$filter_order_Dir = JRequest::getVar('filter_order_Dir','asc');
+					
+					$upurl='index.php?option=com_odudecard&controller=odudecardcard&cat='.$cat.'&where='.$where.'&filter_order=ordering&filter_order_Dir='.$filter_order_Dir.'&pi='.$prev_id.'&po='.$prev_order.'&ci='.$current_id.'&co='.$current_order.'&go=up';
+					echo "<a href=\"".$upurl."\" rel=\"tooltip\" class=\"saveorder btn btn-micro pull-right\" title=\"\" data-original-title=\"Move Up\">UP</a>";
+				}	
+					
+
+				function buttonDown($prev_order,$prev_id,$current_order,$current_id,$next_order,$next_id)
+				{
+					$where=JRequest::getVar('where','');
+					$cat=JRequest::getVar('cat','');
+					$filter_order_Dir = JRequest::getVar('filter_order_Dir','asc');
+					
+					$upurl='index.php?option=com_odudecard&controller=odudecardcard&cat='.$cat.'&where='.$where.'&filter_order=ordering&filter_order_Dir='.$filter_order_Dir.'&ni='.$next_id.'&no='.$next_order.'&ci='.$current_id.'&co='.$current_order.'&go=down';	
+					echo "<a href=\"".$upurl."\" rel=\"tooltip\" class=\"saveorder btn btn-micro pull-right\" title=\"\" data-original-title=\"Move Down\">Down</a>";
+						
+	
+				}
+
+			
+				?>
+
+ 
+<form id="adminForm1" action="<?php echo JRoute::_( 'index.php' );?>" method="post" name="adminForm1">
+<div class="btn-wrapper input-append">
+			<input type="text" name="where" id="where" value="<?php echo JRequest::getVar('where',''); ?>" class="text_area" onchange="document.adminForm1.submit();" placeholder="Search Ecard" />	<button type="submit" class="btn hasTooltip" title="" data-original-title="Search">
+				<i class="icon-search"></i>
+			</button>
+			
+		</div>
+<input type="hidden" name="option" value="com_odudecard" />
+<input type="hidden" name="task" value="" />
+<input type="hidden" name="boxchecked" value="0" />
+<input type="hidden" name="controller" value="odudecardcard" />
+</form>
+
+
+<form id="adminForm2" action="<?php echo JRoute::_( 'index.php' );?>" method="post" name="adminForm2">
+
+		
+		 <select name="cat" id="cat" class="text_area" onchange="document.adminForm2.submit();">
+				          
+                          <?php
+	
+		
+		echo "<option value=0 >All Ecards</option><option value=0>---------------</option>";
+
+		
+		$subcat=getCategory();
+				
+		for( $j=0; $j<count($subcat); $j++ )
+		{
+		$subcategory = $subcat[$j];
+		
+					$check="";
+					if(JRequest::getVar('cat','')==$subcategory->cat)
+					$check="selected=selected";
+		
+		if($subcategory->cat!=$this->odudecard->cat)
+		echo "\n\r<option value='".$subcategory->cat."' ".$check.">".$subcategory->name."</option>";
+		
+		}
+						  ?>
+				          
+
+			            </select> <?php echo JText::_( 'Filter Category' ); ?>
+
+<input type="hidden" name="option" value="com_odudecard" />
+<input type="hidden" name="task" value="" />
+<input type="hidden" name="boxchecked" value="0" />
+<input type="hidden" name="controller" value="odudecardcard" />
+</form>
+
+<form id="adminForm" action="<?php echo JRoute::_( 'index.php' );?>" method="post" name="adminForm">
+
+<div id="editcell">
+	<table class="table table-striped">
+	<thead>
+		<tr>
+			<th width="5">
+				<?php echo JText::_( 'ID' ); ?>
+			</th>
+			<th width="20">
+				<input type="checkbox" name="toggle" value="" onclick="Joomla.checkAll(this)" />
+			</th>			
+			<th>
+						<?php echo JHTML::_('grid.sort',   'Titles of E-Cards', 'title', @$lists['order_Dir'], @$lists['order'] ); ?></th>
+			
+			</th>
+			<th>
+				<?php echo JText::_( 'E-Card Type' ); ?>
+			</th>
+      <th>
+				<?php echo JText::_( 'Username' ); ?>
+			</th>
+				<th>
+				<?php echo JText::_( 'Hits' ); ?>
+			</th>
+			<th>
+				<?php echo JText::_( 'Point' ); ?>
+			</th>
+			<th>
+				<?php echo JText::_( 'Date' ); ?>
+			</th>
+				<th width="1%" nowrap="nowrap"><?php echo JHTML::_('grid.sort', 'Order', 'ordering', @$lists['order_Dir'], @$lists['order']);?></th>
+			<th width="1%"><?php if($lists['order']=='ordering')  echo JHTML::_('grid.order', '', 'filesave.png', 'saveorder' ); ?></th>
+            	<th width="1%" nowrap="nowrap"><?php echo JText::_( 'PUBLISHED' ); ?></th>
+		</tr>
+	</thead>
+	<?php
+	$k = 0;
+	for ($i=0, $n=count( $this->items ); $i < $n; $i++)	{
+		$row = &$this->items[$i];
+		
+		if($i!=0)
+		$previous_row=&$this->items[$i-1];
+	else
+		$previous_row=&$this->items[$i+1];
+	
+	
+		if($i!=(count( $this->items ))-1)
+		$next_row=&$this->items[$i+1];
+	else
+		$next_row=&$this->items[$i-1];
+		
+		
+		$checked 	= JHTML::_('grid.id',   $i, $row->id );
+		$link 		= JRoute::_( 'index.php?option=com_odudecard&controller=odudecardedit&task=edit&cid[]='.$row->id );
+		$published 	= JHTML::_('grid.published', $row, $i );
+		?>
+		<tr class="<?php echo "row$k"; ?>">
+			<td>
+				<?php echo $row->id; ?>
+			</td>
+			<td>
+				<?php echo $checked; ?>
+			</td>
+			<td>
+				<?php echo $row->title; ?><a href="<?php echo $link; ?>"> [Edit]</a>
+			</td>
+			<td>
+				<?php 
+        if($row->type=='F')
+        echo '<img src="'.JURI::root().'components/com_odudecard/include/flash.jpg" alt="'.JText::_('FLASH').'" title="'.JText::_('FLASH').'" border="0" />';
+        else if($row->type=='Y')
+        echo '<a href="'.$row->file.'" target="_blank" border=0><img src="'.JURI::root().'components/com_odudecard/include/youtube.jpg" alt="'.JText::_('YOUTUBE').'" title="'.JText::_('YOUTUBE').'" border="0" /></a>';
+        else if($row->type=='V')
+        echo '<a href="'.$row->file.'" target="_blank" border=0><img src="'.JURI::root().'components/com_odudecard/include/video.jpg" alt="'.JText::_('VIDEO').'" title="'.JText::_('VIDEO').'" border="0" /></a>';
+        else
+         	echo "<img src='".JURI::root()."components/com_odudecard/include/jpg.jpg' alt='".JText::_('Image')."' title='".JText::_('Image')."' border='0' /> <a rel=\"{handler: 'image', size: {x: 700, y: 400}}\" class=\"modal\" href='".JURI::root()."media/ecard/".$row->file."'><img src='".JURI::root()."components/com_odudecard/include/zoom.png' alt=".JText::_('ZOOM')." title=".JText::_('ZOOM')." border=0></a>";
+        
+        
+       
+         ?>
+			</td>
+			<td>
+				<a href="../index.php?option=com_odudecard&controller=odudecardmylist&id=<?php echo $row->username; ?>" target=_blank><?php echo $row->username; ?></a>
+			</td>
+						<td>
+				<?php echo $row->hits; ?>
+			</td>
+				<td>
+				<?php echo $row->point; ?>
+			</td>
+			<td>
+				<?php echo $row->ddate; ?>
+			</td>
+      	<td class="order" colspan="2">
+		
+				<?php 
+				if($i==0 || $i==count( $this->items )-1)
+				{
+					echo "";
+				}
+				else
+				{
+					if($lists['order']=='ordering')
+					{
+						buttonUp($previous_row->ordering,$previous_row->id,$row->ordering,$row->id,$next_row->ordering,$next_row->id);
+						buttonDown($previous_row->ordering,$previous_row->id,$row->ordering,$row->id,$next_row->ordering,$next_row->id);
+					}
+				}
+				?>
+
+    				<input type="text" name="order[]" size="5" value="<?php echo $row->ordering; ?>" class="text_area" style="text-align: center" />
+			</td>
+             	<td>
+			     <?php echo $published; ?>
+			</td>
+		</tr>
+		<?php
+		$k = 1 - $k;
+	}
+	?>
+	</table>
+</div>
+<?php echo $this->pagination->getListFooter(); ?>
+<input type="hidden" name="option" value="com_odudecard" />
+<input type="hidden" name="task" value="" />
+<input type="hidden" name="boxchecked" value="0" />
+<input type="hidden" name="controller" value="odudecardcard" />
+	<input type="hidden" name="where" value="<?php echo JRequest::getVar('where',''); ?>" />
+		<input type="hidden" name="cat" value="<?php echo JRequest::getVar('cat',''); ?>" />
+	<input type="hidden" name="filter_order" value="<?php echo $lists['order']; ?>" />
+	    <input type="hidden" name="filter_order_Dir" value="<?php  echo $lists['order_Dir']; ?>" />  
+</form>

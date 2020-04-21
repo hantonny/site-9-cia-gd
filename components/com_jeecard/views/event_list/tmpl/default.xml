@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="EventList">
+	</layout>
+	<state>
+		<name>JE Ecard</name>
+		<description>JE Ecard</description>
+	</state>
+	<fields name="params" addfieldpath="/administrator/components/com_jeecard/helpers">
+		<fieldset name="basic">
+			<field name="cat_id" type="JePcategory" default="" label="Enter Category" description="Enter Category" required="true"/>
+			
+		</fieldset>
+	</fields>
+
+</metadata>

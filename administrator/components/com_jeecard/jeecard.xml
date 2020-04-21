@@ -1,0 +1,75 @@
+<?xml version="1.2" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>Je Ecard</name>
+    <author>Hardik Mistry</author>
+    <creationDate>04/09/2015</creationDate>
+    <copyright>Copyright (C) 2009 - 2010 Open Source Matters. All rights reserved.</copyright>
+    <authorEmail>emailtohardik@gmail.com</authorEmail>
+    <authorUrl>www.joomlaextensions.co.in</authorUrl>
+    <version>1.2</version>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <description>Thank you for installing JE Ecard Component by Harmistechnology</description>
+    <installfile>install.jeecard.php</installfile>
+	<uninstallfile>uninstall.jeecard.php</uninstallfile>
+    <scriptfile>script.jeecard.php</scriptfile>
+    <install>
+        <sql>
+            <file driver="mysqli" charset="utf8">install.mysql.utf8.sql</file>
+            <file driver="mysql" charset="utf8">install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysqli" charset="utf8">uninstall.mysql.utf8.sql</file>
+            <file driver="mysql" charset="utf8">uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <files folder="components/com_jeecard">
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+        <filename>jeecard.php</filename>
+        <filename>index.html</filename>
+		<filename>router.php</filename>
+    </files>
+    
+    <languages folder="language/en-GB">
+        <language tag="en-GB">en-GB.com_jeecard.ini</language>
+		<language tag="en-GB">en-GB.mod_ecardsearch.ini</language>
+    </languages>
+    <administration>
+        <menu task="home">Je Ecard</menu>
+        <submenu>
+			<menu  view="home" controller="home">Home</menu>
+			<menu  view="category" controller="category">Category</menu>
+			<menu  view="event" controller="event">Event</menu>
+			<menu  view="eventinvite" controller="eventinvite">Event Invitation</menu>
+			<menu  view="configration" controller="configration">Event Setting</menu>
+			<menu  view="about">About</menu>
+        </submenu>
+        <files folder="administrator/components/com_jeecard">
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>controller.php</filename>
+            <filename>jeecard.php</filename>
+            <filename>install.mysql.utf8.sql</filename>
+            <filename>uninstall.mysql.utf8.sql</filename>
+			 <filename>readme.html</filename>
+            <filename>index.html</filename>
+        </files>
+        <languages folder="administrator/language/en-GB">
+            <language tag="en-GB">en-GB.com_jeecard.ini</language>
+        </languages>
+    </administration>
+    
+    <modules folder="modules">
+        <module module="mod_ecardsearch" client="site" />
+    </modules>
+
+</extension>

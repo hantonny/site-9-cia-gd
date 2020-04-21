@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+         <layout title="Link to Category">
+                <message>List ecard from selected category.</message>
+        </layout>
+                <fields name="params">
+        <fieldset name="request">
+
+				
+           	<field name="list" type="radio"
+				default="auto"
+				description="Display ecard of your choice"
+				label="Show Ecard"
+			>
+				<option value="all">all</option>
+				<option value="pro">Premium</option>
+			</field>
+			<field name="mymenuitem" type="menuitem" default="1" label="Select Primary Menu" description="Main Ecard Menu" />
+			<field name="pickcat" type="sql" default="1" label="Select Category" query="SELECT slug, name FROM #__ecard_cate order by ordering asc" key_field="slug" value_field="name" />
+			 <field name="@spacer" type="spacer" default="" label="" description="" />
+        </fieldset>
+    </fields>
+</metadata>

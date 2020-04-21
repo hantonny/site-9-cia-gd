@@ -1,0 +1,29 @@
+[
+    {
+        "title"         : "Upload Static ODude Ecard",
+        "alias"         : "odudecard-jpeg",
+        "description"   : "Earn points when you upload picture as ecard",
+        "command"       : "odudecard.jpeg",
+        "extension"     : "com_odudecard",
+        "state"         : true,
+        "points"        : 5
+    },
+    {
+        "title"         : "Upload YouTube Video ODude Ecard",
+        "alias"         : "odudecard-youtube",
+        "description"   : "Earn points when you upload youtube video link as ecard",
+        "command"       : "odudecard.youtube",
+        "extension"     : "com_odudecard",
+        "state"         : true,
+        "points"        : 10
+    },
+    {
+        "title"         : "Upload MP4,Mv4 video to ODude Ecard",
+        "alias"         : "odudecard-video",
+        "description"   : "Earn points when you upload video as ecard",
+        "command"       : "odudecard.video",
+        "extension"     : "com_odudecard",
+        "state"         : true,
+        "points"        : 15
+    }
+]

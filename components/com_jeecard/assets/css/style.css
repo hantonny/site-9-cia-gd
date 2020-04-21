@@ -1,0 +1,208 @@
+ .nav_jeecard ul {
+	margin:0;
+	padding:0;
+	background-image:url(../img/bg_nav_fi_4.png);
+	background-repeat:no-repeat;
+	width:980px;
+	height:40px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	-moz-border-radius-topleft:10px;
+	-moz-border-radius-topright:10px;
+	-webkit-border-top-left-radius:10px;
+	-webkit-border-top-right-radius:10px;
+	border-bottom:1px solid #d8d8d8;
+	-webkit-background-clip:padding-box
+}
+ .nav_jeecard li {
+	margin:0;
+	padding:0;
+	float:left;
+	width:244px;
+	height:40px
+}
+ .nav_jeecard li a {
+	cursor:pointer;
+	font-weight:bold;
+	width:244px;
+	height:32px;
+	padding-top:8px;
+	text-align:center;
+	display:block;
+	font-size:16px;
+	color:#999;
+	text-shadow:#fff 1px 1px 1px
+}
+ .nav_jeecard li a:hover {
+	text-decoration:none;
+	background:none !important;
+}
+ .nav_jeecard a.change_design,  .nav_jeecard a.close_designs {
+	position:absolute;
+	top:8px;
+	right:10px
+}
+.select_design .nav_jeecard ul {
+	background-position:0 0
+}
+ul.add_guests {
+	background-position:0 -40px
+}
+ul.invite_options {
+	background-position:0 -80px
+}
+ .nav_jeecard li a span {
+	height:24px;
+	line-height:24px;
+	font-size:15px !important
+}
+ .nav_jeecard li a:hover span {
+	color:#888
+}
+ .nav_jeecard li a span.num {
+	display:inline-block;
+	color:#fff;
+	text-shadow:1px 1px 1px #666;
+	background:url(../img/bg_step_number.png) no-repeat;
+	width:24px;
+	height:24px;
+	line-height:24px;
+	font-weight:bold;
+	font-size:14px !important
+}
+.select_design li.design a span {
+	color:#666
+}
+.select_design li.design a span.num {
+	color:#fff;
+	background:url(../img/bg_step_number_active.png) no-repeat;
+	text-shadow:1px 1px 1px #558708
+}
+.enter_details li.details a span {
+	color:#666
+}
+.enter_details li.details a span.num {
+	color:#fff;
+	background:url(../img/bg_step_number_active.png) no-repeat;
+	text-shadow:1px 1px 1px #558708
+}
+.add_guests li.guests a span {
+	color:#666
+}
+.add_guests li.guests a span.num {
+	color:#fff;
+	background:url(../img/bg_step_number_active.png) no-repeat;
+	text-shadow:1px 1px 1px #558708
+}
+.invite_options li.options a span.num {
+	background:url(../img/bg_step_number_active.png) no-repeat;
+	text-shadow:1px 1px 1px #558708
+}
+#all_div{
+width:979px;
+border:1px solid #ccc;
+border-top:0px solid #ccc;
+}
+#all_div table, #all_div table tr td, #all_div table tr{
+border:0px !important;
+}
+#all_div table tr td{
+padding: 5px !important;
+font-weight:bold;
+
+}
+#all_div input, #all_div textarea, #all_div input.text {
+	margin:0;
+	padding:3px;
+	font-family:inherit;
+	border:1px solid #ccc;
+	font-size:1.1em;
+	border-radius:2px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-box-shadow:0 2px 2px #E3E3E3 inset;
+	-webkit-box-shadow:0 2px 2px #E3E3E3 inset;
+	-webkit-background-clip:padding-box
+	
+}
+#all_div input[type="checkbox"], #all_div input[type="radio"] {
+	background:none;
+	border:none
+}
+.nextbtn {
+margin:0px 90px 0px 0px;
+}
+#guest_edit {
+	width:589px;	 
+	float:left;
+	max-height:353px
+}
+#guest_edit table tbody td {
+	vertical-align:middle
+}
+#guest_edit label.error {
+	width:123px !important;
+	padding-bottom:3px
+}
+#guest_edit .form_field {
+	line-height:1em;
+	padding:0
+}
+.table table {
+	width:100%;
+	table-layout:fixed;
+	background:#fff;
+	border-collapse:collapse
+}
+.table table thead {
+	border-bottom:1px solid #ececec;
+	background:#f9f9f9;
+	-moz-box-shadow:0 2px 2px #E3E3E3 inset;
+	-webkit-box-shadow:0 2px 2px #E3E3E3 inset;
+	box-shadow:0 2px 2px #E3E3E3 inset
+}
+.table table thead th {
+	padding:5px;
+	border-right:1px solid #e0e0e0;
+	font-size:.9em;
+	color:#999;
+	font-weight:normal;
+	text-align:left;
+
+}
+.table {
+	position:relative;
+	zoom:1;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	width:100%;
+	border:1px solid #CCCCCC;
+	-webkit-border-top-left-radius:2px;
+	-webkit-border-top-right-radius:2px;
+	-moz-border-radius-topleft:2px;
+	-moz-border-radius-topright:2px;
+	border-top-left-radius:2px;
+	border-top-right-radius:2px
+}
+.table table thead th a, .table table thead th span {
+	display:block;
+	margin:10px 10px 9px 10px;
+	color:#999;
+	font-weight:normal;
+	cursor:pointer
+}
+.table table .edit{
+width:80px;
+}
+.table table .name{
+width:120px;
+}
+
+.table_placeholder td {
+	text-align:center;
+	color:#e0e0e0;
+	font-size:16px;
+	height:220px;
+	font-weight:bold;
+	vertical-align:middle
+}
