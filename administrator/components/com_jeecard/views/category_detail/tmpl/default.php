@@ -99,7 +99,7 @@ $extra=explode("`",$fields);
 		</tr>
 		<!--<tr>
 			<td colspan="2">
-				<?php// echo $extra[0];?>
+				<?php echo $extra[0];?>
 				
 				</table>
 				
